@@ -38,6 +38,6 @@ module.exports.updateProduct = (req, res) => {
     // Pass in object telling function to return new/updated data in response
     {new: true, runValidators: true}
   )
-    .then(updatedShow => res.json(updatedShow))
+    .then(updatedProduct => res.json(updatedProduct))
     .catch(err => res.json(err))
 }
