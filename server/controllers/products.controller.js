@@ -35,7 +35,7 @@ module.exports.updateProduct = (req, res) => {
     {_id: req.params.id},
     // Pass in request body containing updated data
     req.body,
-    // Pass in object telling function to return new/updated data
+    // Pass in object telling function to return new/updated data in response
     {new: true, runValidators: true}
   )
     .then(updatedShow => res.json(updatedShow))
