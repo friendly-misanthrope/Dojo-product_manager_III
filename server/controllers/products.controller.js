@@ -27,3 +27,17 @@ module.exports.findOneProduct = (req, res) => {
     .then(oneProduct => res.json(oneProduct))
     .catch(err => console.log(err))
 }
+
+// Update an existing product
+module.exports.updateProduct = (req, res) => {
+  Product.findOneAndUpdate(
+    // Pass in id to find product
+    {_id: req.params.id},
+    // Pass in request body containing updated data
+    req.body,
+    // Pass in object telling function to return new/updated data
+    {new: true, runValidators: true}
+  )
+    .then(updatedShow => res.json(updatedShow))
+    .catch(err => res.json(err))
+}
